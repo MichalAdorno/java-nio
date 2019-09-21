@@ -24,7 +24,7 @@ public class TransmogrifyHandler implements Handler<Socket> {
     }
 
     public int transmogrify(int data) {
-        return Character.isLetter(data) ? data ^ ' ' : data;
+        return Character.isLetter(data) ? data ^ ' ': data;
     }
 
 }
