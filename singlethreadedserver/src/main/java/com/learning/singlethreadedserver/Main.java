@@ -17,11 +17,11 @@ public class Main {
     public static void main(String... args) throws IOException {
         ServerSocket ss = new ServerSocket(8080);
 
-        while(true){
+        while (true) {
             Socket s = ss.accept();
-            try(s;
-            InputStream in = s.getInputStream();
-            OutputStream out = s.getOutputStream();) {
+            try (s;
+                 InputStream in = s.getInputStream();
+                 OutputStream out = s.getOutputStream();) {
                 int data;
                 while ((data = in.read()) != -1) {
                     out.write(transmogrify(data));

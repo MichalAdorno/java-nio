@@ -11,6 +11,8 @@
     <modules>
         <module>singlethreadedserver</module>
         <module>multithreadedblockingserver</module>
+        <module>multithreadeddecoratedblockingserver</module>
+        <module>executorserviceblockingserver</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

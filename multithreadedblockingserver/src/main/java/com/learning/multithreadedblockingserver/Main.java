@@ -7,6 +7,8 @@ import java.io.UncheckedIOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import static com.learning.multithreadedblockingserver.Util.transmogrify;
+
 public class Main {
 
     public static void main(String... args) throws IOException {
@@ -26,7 +28,7 @@ public class Main {
                 OutputStream out = s.getOutputStream();) {
                 int data;
                 while ((data = in.read()) != -1) {
-                    out.write(transmogrify(data));
+                    out.write(Util.transmogrify(data));
                 }
             } catch(IOException ioex){
                 System.out.println("Throwing an IO exception");
@@ -36,9 +38,5 @@ public class Main {
             }
         }).start();
 
-    }
-
-    private static int transmogrify(int data) {
-        return Character.isLetter(data) ? data ^ ' ' : data;
     }
 }
