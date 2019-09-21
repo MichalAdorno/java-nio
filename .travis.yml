@@ -1,9 +1,10 @@
 language: java
+sudo: true
 jdk: openjdk11
 git:
   depth: false
   quiet: true
-before_install:
-  - chmod +x mvnw
+#before_install:
+#  - chmod +x mvnw
 script:
-  - ./mvnw clean test
+  - mvn clean install
